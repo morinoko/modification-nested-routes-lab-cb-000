@@ -7,7 +7,7 @@ module ArtistsHelper
     if artist
       "Artist: #{song.artist_name}"
     else
-      select_tag 'song[artist_id]', options_from_collection_for_select(Artist.all, :id, :name, song.artist_id),
+      select_tag 'song[artist_id]', options_from_collection_for_select(Artist.all, :id, :name, song.artist_id)
     end
   end
 end
