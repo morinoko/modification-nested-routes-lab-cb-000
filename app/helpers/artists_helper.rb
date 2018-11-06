@@ -4,7 +4,7 @@ module ArtistsHelper
   end
 
   def artist_select(song, artist)
-    if params[:artist_id]
+    if artist
       "Artist: #{song.artist_name}"
       hidden_field_tag 'song[artist_id]', artist.id
     else
