@@ -6,9 +6,11 @@ module ArtistsHelper
   def artist_select(song, artist)
     if params[:artist_id]
       "Artist: #{song.artist_name}"
-      hidden_field_tag :artist_id, artist.id
+      hidden_field_tag 'song[artist_id]', artist.id
     else
-      select_tag :artist_id, options_from_collection_for_select(Artist.all, :id, :name), id: "song_artist_id"
+      select_tag 'song[artist_id]',
+                 options_from_collection_for_select(Artist.all, :id, :name, song.artist_id),
+                 id: "song_artist_id"
     end
   end
 end
